@@ -77,10 +77,11 @@ body {
     overflow: hidden;
   }
   
-  .nav-links {
+  .navbar-title, .nav-links {
     float: none;
     display: block;
     text-align: center;
+    padding: 15px 20px;
   }
 
   .nav-links a {
@@ -112,9 +113,6 @@ body {
 
 .project p {
   color: #555;
-}
-.project {
-  margin: 20px;
 }
 
 .contact-section {
@@ -162,4 +160,36 @@ button {
 
 button:hover {
   background-color: blue;
+}
+
+.full-width {
+  width: 50%;
+}
+
+/* Responsive Intro Section Styles */
+.intro-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.intro-image, .intro-text {
+  max-width: 100%; /* Adjust as needed */
+  margin-right: 0; /* No margin for spacing between image and text on small screens */
+}
+
+h1 {
+  font-size: 2em;
+  background: linear-gradient(to right, #fff, #fff) no-repeat;
+  background-size: 100% 100%;
+  -webkit-background-clip: text;
+  text-fill-color: transparent;
+  color: blue;
+  font-size: 50px;
+  text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+}
+
+p {
+  font-size: 25px;
 }
