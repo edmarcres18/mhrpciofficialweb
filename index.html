@@ -73,6 +73,42 @@
     <p>Email: <a href="mailto:mhrpciofficial@gmail.com">mhrpciofficial@gmail.com</a></p>
   </div>
 </div>
+<!-- Add this to the <head> section of your HTML -->
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<!-- Add this script at the end of your HTML body or in an external script file -->
+<script>
+  $(document).ready(function () {
+    // Smooth scrolling for anchor links
+    $('a[href^="#"]').on('click', function (event) {
+      var target = $(this.getAttribute('href'));
+      if (target.length) {
+        event.preventDefault();
+        $('html, body').stop().animate({
+          scrollTop: target.offset().top
+        }, 1000);
+      }
+    });
+
+    // Add a transition class when scrolling to different sections
+    $(window).on('scroll', function () {
+      var scrollPos = $(window).scrollTop();
+
+      // Add a class to the body when scrolling to the home section
+      if (scrollPos < $('#home').offset().top + $('#home').outerHeight()) {
+        $('body').removeClass('scrolled');
+      } else {
+        $('body').addClass('scrolled');
+      }
+
+      // Add a class to the body when scrolling to the portfolio section
+      if (scrollPos > $('#portfolio').offset().top - $(window).height() / 2) {
+        $('body').addClass('scrolled-portfolio');
+      } else {
+        $('body').removeClass('scrolled-portfolio');
+      }
+    });
+  });
+</script>
 
 </body>
 </html>
