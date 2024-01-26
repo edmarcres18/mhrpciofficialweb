@@ -193,3 +193,22 @@ h1 {
 p {
   font-size: 25px;
 }
+/* Intro Section */
+#home {
+  transition: background-color 0.5s ease;
+}
+
+/* Portfolio Section */
+#portfolio {
+  transition: background-color 0.5s ease;
+}
+
+/* About Section */
+#about {
+  transition: background-color 0.5s ease;
+}
+
+/* Contact Section */
+#contact {
+  transition: background-color 0.5s ease;
+}
