@@ -193,22 +193,26 @@ h1 {
 p {
   font-size: 25px;
 }
-/* Intro Section */
-#home {
+/* Add this to your styles.css file */
+
+/* Initial styles for sections */
+body {
+  background-color: #f8f8f8;
   transition: background-color 0.5s ease;
 }
 
-/* Portfolio Section */
-#portfolio {
+/* Scrolled styles for sections */
+body.scrolled {
+  background-color: #ffffff;
+}
+
+body.scrolled-portfolio {
+  background-color: #f2f2f2;
+}
+
+/* Navbar transition */
+.navbar {
   transition: background-color 0.5s ease;
 }
 
-/* About Section */
-#about {
-  transition: background-color 0.5s ease;
-}
-
-/* Contact Section */
-#contact {
-  transition: background-color 0.5s ease;
-}
+/* Other styles... */
