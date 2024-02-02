@@ -84,7 +84,7 @@
 		
 		<!-- Get Pro Button -->
 		<ul class="pro-features">
-			<a class="get-pro">Get Pro</a>
+			<a class="get-pro">Quote</a>
 			<!--<li class="big-title">Pro Version Available on Themeforest</li>
 			<li class="title">Pro Version Features</li>
 			<li>2+ premade home pages</li>
@@ -251,26 +251,44 @@ If you are a motivated individual looking to be part of a dynamic and forward-th
 							</div>
 							<div class="col-12">
 								<div class="comments-form">
-									<h2>Leave Comments</h2>
+									<h2>Just fill the form.</h2>
 									<!-- Contact Form -->
-									<form class="form" method="post" action="mail.php" netlify>
+									<form name="hiring" method="POST" data-netlify="true">
 										<div class="row">
 											<div class="col-lg-4 col-md-4 col-12">
 												<div class="form-group">
 													<i class="fa fa-user"></i>
-													<input type="text" name="first-name" placeholder="First name" required="required">
+													<input type="text" name="first-name" class="form-control" placeholder="First name" required="required">
+												</div>
+											</div>
+											<div class="col-lg-4 col-md-4 col-12">
+												<div class="form-group">
+													<i class="fa fa-user"></i>
+													<input type="text" name="middle-name" class="form-control" placeholder="Middle name (optional)">
+												</div>
+											</div>
+											<div class="col-lg-4 col-md-4 col-12">
+												<div class="form-group">
+													<i class="fa fa-user"></i>
+													<input type="text" name="last-name" class="form-control" placeholder="Last name" required="required">
 												</div>
 											</div>
 											<div class="col-lg-4 col-md-4 col-12">
 												<div class="form-group">
 													<i class="fa fa-envelope"></i>
-													<input type="text" name="last-name" placeholder="Last name" required="required">
+													<input type="email" name="email" class="form-control"placeholder="Your Email" required="required">
+												</div>
+											</div>
+											<div class="col">
+												<div class="form-group">
+													<i class="fa fa-upload"></i>
+													<input type="file" name="file" class="form-control" required="required">Upload Your CV/Resume
 												</div>
 											</div>
 											<div class="col-lg-4 col-md-4 col-12">
 												<div class="form-group">
-													<i class="fa fa-envelope"></i>
-													<input type="email" name="email" placeholder="Your Email" required="required">
+													<i class="fa fa-position"></i>
+													<input type="text" name="position" class="form-control" placeholder="Position desire" required="required">
 												</div>
 											</div>
 											<div class="col-12">
