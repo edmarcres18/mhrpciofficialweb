@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* Your CSS styles remain unchanged */
+    </style>
+    <title>MHR Property Conglomerates Inc. - Verification</title>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+</head>
+<body>
+    <div class="verification-container">
+        <h1>Verification</h1>
+        <p>Please complete the reCAPTCHA to verify that you are human.</p>
+        <div class="g-recaptcha" data-sitekey="6LdpdHMpAAAAAIpiqIKU6LR-4typDQpjuU6S5qRY"></div>
+        <button onclick="startVerification()">Verify</button>
+        <p id="verification-status"></p>
+
+        <div class="loader-container" id="loaderContainer">
+            <div class="loader"></div>
+        </div>
+    </div>
+
+    <script>
+        function startVerification() {
+            var response = grecaptcha.getResponse();
+
+            if (response.length === 0) {
+                // reCAPTCHA not verified
+                document.getElementById('verification-status').textContent = 'Please complete the reCAPTCHA.';
+                return;
+            }
+
+            // reCAPTCHA verified, proceed with your verification logic
+            // Your existing logic for verification goes here
+        }
+    </script>
+</body>
+</html>
