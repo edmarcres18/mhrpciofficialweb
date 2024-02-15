@@ -1,9 +1,11 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
+        /* Your CSS styles */
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             height: 100vh;
@@ -82,9 +84,11 @@
 </head>
 <body>
     <div class="verification-container">
+        <!-- Your HTML content -->
         <h1>Verification</h1>
         <p>Please complete the reCAPTCHA to verify that you are human.</p>
         <div class="g-recaptcha" data-sitekey="6LdpdHMpAAAAAIpiqIKU6LR-4typDQpjuU6S5qRY"></div>
+        <br>
         <button onclick="startVerification()">Verify</button>
         <p id="verification-status"></p>
 
@@ -98,18 +102,35 @@
             var response = grecaptcha.getResponse();
 
             if (response.length === 0) {
-                // reCAPTCHA not verified
                 document.getElementById('verification-status').textContent = 'Please complete the reCAPTCHA.';
                 return;
             }
 
-            // reCAPTCHA verified, proceed with redirection
             document.getElementById('verification-status').textContent = 'Verification successful. Redirecting...';
-            // Redirect to index2.html after a brief delay (2000 milliseconds or 2 seconds)
+            
+            // Set a flag in session storage to indicate that user has passed verification
+            sessionStorage.setItem('verificationPassed', 'true');
+            
             setTimeout(function () {
-                window.location.replace('index2.html'); // Use replace instead of href to modify the history
+                window.location.replace('index2.html');
             }, 2000);
+        }
+
+        // Check if user has passed verification when this page loads
+        window.onload = function() {
+            var verificationPassed = sessionStorage.getItem('verificationPassed');
+            if (verificationPassed === 'true') {
+                // Clear the flag to avoid unnecessary restriction
+                sessionStorage.removeItem('verificationPassed');
+                
+                // Check if user is coming from index2.html, if so, redirect them back
+                var previousPage = document.referrer;
+                if (previousPage.includes('index2.html')) {
+                    window.location.replace('index.html');
+                }
+            }
         }
     </script>
 </body>
 </html>
+
