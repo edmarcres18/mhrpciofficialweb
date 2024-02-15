@@ -32,16 +32,9 @@
             font-size: 18px;
         }
 
-        .checkbox-container {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-top: 15px;
-        }
-
-        .checkbox-container input {
-            margin-right: 10px;
-            cursor: pointer;
+        .g-recaptcha {
+            display: inline-block;
+            margin-bottom: 15px;
         }
 
         .loader-container {
@@ -114,7 +107,7 @@
             document.getElementById('verification-status').textContent = 'Verification successful. Redirecting...';
             // Redirect to index2.html after a brief delay (2000 milliseconds or 2 seconds)
             setTimeout(function () {
-                window.location.href = 'index2.html';
+                window.location.replace('index2.html'); // Use replace instead of href to modify the history
             }, 2000);
         }
     </script>
