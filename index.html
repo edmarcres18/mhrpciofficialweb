@@ -112,7 +112,7 @@
             sessionStorage.setItem('verificationPassed', 'true');
             
             setTimeout(function () {
-                window.location.replace('index2.html');
+                window.location.replace('home.html');
             }, 2000);
         }
 
@@ -125,7 +125,7 @@
                 
                 // Check if user is coming from index2.html, if so, redirect them back
                 var previousPage = document.referrer;
-                if (previousPage.includes('index2.html')) {
+                if (previousPage.includes('home.html')) {
                     window.location.replace('index.html');
                 }
             }
