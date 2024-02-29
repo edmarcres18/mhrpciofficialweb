@@ -54,6 +54,26 @@ body{
 	font-size:14px;
 	color:#888;
 }
+#drop-area {
+    border: 2px dashed #ccc;
+    padding: 20px;
+    text-align: center;
+    cursor: pointer;
+}
+
+#drop-area i {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+#drop-area p {
+    margin: 0;
+}
+
+#file-input {
+    display: none;
+}
+
 .pro-features {
 	position: fixed;
 	right: -300px;
