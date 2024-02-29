@@ -192,6 +192,7 @@
 									<div class="news-text">
 										<p>At MHR Property Conglomerates Inc., we're dedicated to nurturing our team's potential and are actively seeking passionate individuals in medicines, rooms, petroleum and tradings who thrive in a collaborative, innovative environment, offering competitive compensation, professional growth, and inclusive support to shape the future of industry.
 											</p>
+											<!--
 										<div class="image-gallery">
 											<div class="row">
 										
@@ -222,7 +223,9 @@
 												</div>
 											</div>
 										</div>
+										-->
 										<!-- Modal -->
+										<!--
 <div class="modal fade" id="modal1" tabindex="-1" role="dialog" aria-labelledby="modalLabel1" aria-hidden="true">
 	<div class="modal-dialog modal-lg" role="document">
 	  <div class="modal-content">
@@ -283,7 +286,7 @@
 	  </div>
 	</div>
   </div>
-  
+-->
   <!-- Include Bootstrap JS and Popper.js -->
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
@@ -347,11 +350,44 @@
 												</div>
 											</div>
 											<div class="col">
-												
+												<div id="drop-area" ondrop="dropHandler(event)" ondragover="dragOverHandler(event)">
 													<i class="fa fa-upload"></i>
-													<input type="file" name="file" class="form-control" required="required">Upload Your CV/Resume here
-												
+													<p>Drag & Drop your CV/Resume here or <label for="file-input">browse</label></p>
+													<span id="file-name"></span>
+												</div>
+												<input type="file" id="file-input" name="file" class="form-control" style="display: none;" required="required" onchange="handleFiles(this.files)">
 											</div>
+											
+											
+											<script>
+												function dragOverHandler(event) {
+													event.preventDefault();
+													event.dataTransfer.dropEffect = "copy";
+												}
+												
+												function dropHandler(event) {
+													event.preventDefault();
+													var files = event.dataTransfer.files;
+													handleFiles(files);
+												}
+												
+												function handleFiles(files) {
+													var file = files[0];
+													console.log("File selected: " + file.name);
+													
+													// Display the name of the uploaded file
+													document.getElementById("file-name").textContent = file.name;
+													
+													// You can perform further actions with the selected file here
+												}
+												
+												// If you want to trigger file selection when the drop area is clicked
+												document.getElementById("drop-area").addEventListener("click", function() {
+													document.getElementById("file-input").click();
+												});
+												</script>
+												
+											
 											<div class="col-12">
 												<div class="form-group message">
 													<i class="fa fa-pencil"></i>
@@ -401,32 +437,7 @@
 									</div>
 								</div>
 								<!-- End Single Post -->
-								<!-- Single Post -->
-								<div class="single-post">
-									<div class="image">
-										<img src="img/verbena.jpg" alt="#" class="img-thumbnail" data-toggle="modal" data-target="#modal22">
-									</div>
-									<div class="content">
-										<h5><a href="#">Upcoming...</a></h5>
-										<ul class="comment">
-											<li><i class="fa fa-calendar" aria-hidden="true"></i>(date)</li>
-										</ul>
-									</div>
-								</div>
-								<!-- End Single Post -->
-								<!-- Single Post -->
-								<div class="single-post">
-									<div class="image">
-										<img src="img/mhrhci.png" alt="#" class="img-thumbnail" data-toggle="modal" data-target="#modal33">
-									</div>
-									<div class="content">
-										<h5><a href="#">Upcoming...</a></h5>
-										<ul class="comment">
-											<li><i class="fa fa-calendar" aria-hidden="true"></i>(date)</li>
-										</ul>
-									</div>
-								</div>
-								<!-- End Single Post -->
+							
 								<!-- Modal -->
 								<div class="modal fade" id="modal11" tabindex="-1" role="dialog" aria-labelledby="modalLabe11" aria-hidden="true">
 									<div class="modal-dialog modal-lg" role="document">
@@ -444,38 +455,9 @@
 									  </div>
 									</div>
 								  </div>
-								  <div class="modal fade" id="modal22" tabindex="-1" role="dialog" aria-labelledby="modalLabel22" aria-hidden="true">
-									<div class="modal-dialog modal-lg" role="document">
-									  <div class="modal-content">
-										<div class="modal-header">
-										  <h5 class="modal-title" id="modalLabel4">Upcoming event on (Date)</h5>
-										  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-											<span aria-hidden="true">&times;</span>
-										  </button>
-										</div>
-										<div class="modal-body">
-										  <img src="img/verbena.jpg" alt="#" class="img-fluid">
-										</div>
-									  </div>
-									</div>
-								  </div>
-								<div class="modal fade" id="modal33" tabindex="-1" role="dialog" aria-labelledby="modalLabel33" aria-hidden="true">
-									<div class="modal-dialog modal-lg" role="document">
-									  <div class="modal-content">
-										<div class="modal-header">
-										  <h5 class="modal-title" id="modalLabel4">Upcoming event on (Date)</h5>
-										  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-											<span aria-hidden="true">&times;</span>
-										  </button>
-										</div>
-										<div class="modal-body">
-										  <img src="img/mhrhci.png" alt="#" class="img-fluid">
-										</div>
-									  </div>
-									</div>
-								  </div>
+								
     <!-- End Modal -->
-							</div>
+					
 							<!--/ End Single Widget -->
 							<!-- Single Widget -->
 							<!--/ End Single Widget -->
@@ -499,20 +481,11 @@
 								<p>Follow and like us on Socials</p>
 								<!-- Social -->
 								<ul class="social">
-									<li><a href="https://www.facebook.com/profile.php?id=61556283472433"><i class="icofont-facebook"></i></a></li>
-									<li><a href="https://www.youtube.com/channel/UClbQSVWvk9juRqFWhj3tvbQ"><i class="icofont-youtube"></i></a></li>
+									<li><a href="https://www.facebook.com/profile.php?id=61556283472433" target="_blank"><i class="icofont-facebook"></i></a></li>
+									<li><a href="https://www.youtube.com/channel/UClbQSVWvk9juRqFWhj3tvbQ" target="_blank"><i class="icofont-youtube"></i></a></li>
 									<li><a href="#"><i class="icofont-whatsapp"></i></a></li>
 								</ul>
 								<!-- End Social -->
-							</div>
-						</div>
-						<div class="col-lg-3 col-md-6 col-12">
-							<div class="single-footer">
-								<h2>Open Hours</h2>
-								<p>Close on weekends.</p>
-								<ul class="time-sidual">
-									<li class="day">Monday - Friday <span>8:00 AM-5:00 PM</span></li>
-								</ul>
 							</div>
 						</div>
 						<div class="col-lg-3 col-md-6 col-12">
@@ -526,11 +499,14 @@
 						</div>
 						<div class="col-lg-3 col-md-6 col-12">
 							<div class="single-footer">
-								<h2>About Us</h2>
-								<p>MHR Property Conglomerates Inc.</p>
-								<p>
-									We are Good in Success.
-								</p>
+								<h2>Terms Of Use</h2>
+								<a href="https://www.termsfeed.com/live/0bf7b6a2-44c0-4869-997d-5ec21c05aee2" target="_blank"><p>Terms and Conditions for MHRPCI</p></a>
+							</div>
+						</div>
+						<div class="col-lg-3 col-md-6 col-12">
+							<div class="single-footer">
+								<h2>Privacy Policy</h2>
+								<a href="https://www.termsfeed.com/live/216c818c-121b-4c84-84ee-f4785f58a948" target="_blank"><p>Privacy Policy for MHRPCI</p></a>
 							</div>
 						</div>
 					</div>
