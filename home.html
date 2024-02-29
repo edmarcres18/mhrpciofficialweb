@@ -128,7 +128,7 @@
 		
 		<section class="slider">
 			<!-- Single Slide -->
-			<div class="single-slider" style="background-image:url('img/realstate.jpg')">
+			<div class="single-slider" style="background-image:url('img/mhrpci.png')">
 				<div class="container">
 					<div class="row">
 						<div class="col-lg-7">
@@ -241,10 +241,19 @@
 						<div class="single-fun">
 							<i class="icofont icofont-table"></i>
 							<div class="content">
-								<span class="counter">24</span>
+								<span class="counter" id="total-years"></span>
 								<p>Years of Experience</p>
 							</div>
 						</div>
+						<script>
+							document.addEventListener("DOMContentLoaded", function() {
+								var currentYear = new Date().getFullYear();
+								var startYear = 2000; // Change this to the founding year of the company
+								var totalYears = currentYear - startYear;
+						
+								document.getElementById("total-years").innerHTML = totalYears;
+							});
+						</script>
 						<!-- End Single Fun -->
 					</div>
 				</div>
@@ -537,20 +546,11 @@
 								<p>Follow and like us on Socials</p>
 								<!-- Social -->
 								<ul class="social">
-									<li><a href="https://www.facebook.com/profile.php?id=61556283472433"><i class="icofont-facebook"></i></a></li>
-									<li><a href="https://www.youtube.com/channel/UClbQSVWvk9juRqFWhj3tvbQ"><i class="icofont-youtube"></i></a></li>
+									<li><a href="https://www.facebook.com/profile.php?id=61556283472433" target="_blank"><i class="icofont-facebook"></i></a></li>
+									<li><a href="https://www.youtube.com/channel/UClbQSVWvk9juRqFWhj3tvbQ" target="_blank"><i class="icofont-youtube"></i></a></li>
 									<li><a href="#"><i class="icofont-whatsapp"></i></a></li>
 								</ul>
 								<!-- End Social -->
-							</div>
-						</div>
-						<div class="col-lg-3 col-md-6 col-12">
-							<div class="single-footer">
-								<h2>Open Hours</h2>
-								<p>Close on weekends.</p>
-								<ul class="time-sidual">
-									<li class="day">Monday - Friday <span>8:00 AM-5:00 PM</span></li>
-								</ul>
 							</div>
 						</div>
 						<div class="col-lg-3 col-md-6 col-12">
@@ -564,11 +564,14 @@
 						</div>
 						<div class="col-lg-3 col-md-6 col-12">
 							<div class="single-footer">
-								<h2>About Us</h2>
-								<p>MHR Property Conglomerates Inc.</p>
-								<p>
-									We are Good in Success.
-								</p>
+								<h2>Terms Of Use</h2>
+								<a href="https://www.termsfeed.com/live/0bf7b6a2-44c0-4869-997d-5ec21c05aee2" target="_blank"><p>Terms and Conditions for MHRPCI</p></a>
+							</div>
+						</div>
+						<div class="col-lg-3 col-md-6 col-12">
+							<div class="single-footer">
+								<h2>Privacy Policy</h2>
+								<a href="https://www.termsfeed.com/live/216c818c-121b-4c84-84ee-f4785f58a948" target="_blank"><p>Privacy Policy for MHRPCI</p></a>
 							</div>
 						</div>
 					</div>
